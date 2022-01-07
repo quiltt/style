@@ -1,0 +1,47 @@
+---
+AllCops:
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  Exclude:
+    - 'bin'
+    - 'db'
+    - 'config'
+    - 'node_modules'
+    - 'log'
+    - 'public'
+    - 'storage'
+    - 'tmp'
+  NewCops: enable
+
+# Good Code should be easy to scan. With table alignment its easier to compare
+# the lines, that may be simlar, and detect bugs.
+Layout/HashAlignment:
+  # @example
+  #   {
+  #       a: abc,
+  #      ab: ab,
+  #     abc: c
+  #   }
+  EnforcedColonStyle: table
+  # @example
+  #   {
+  #     :a   => abc,
+  #     :ab  => ab,
+  #     :abc => c
+  #   }
+  EnforcedHashRocketStyle: table
+
+# Ruby is nice because it's readable, this whole `e` thing seems like c-style.
+# @example
+#   rescue StandardError => exception
+Naming/RescuedExceptionsVariableName:
+  PreferredName: exception
+
+# Ruby is nice because it's expressive, favoring readablity by supporting multiple
+# options, i.e. count vs length on arrays.
+# @example
+#     fail 'Something Broke'
+#   rescue StandardError => exception
+#     raise exception
+Style/SignalException:
+  EnforcedStyle: semantic
