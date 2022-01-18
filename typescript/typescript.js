@@ -36,21 +36,12 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-floating-promises': 'off',
-    'comma-dangle': 'off',
-    '@typescript-eslint/comma-dangle': ['error', 'only-multiline'],
-    indent: 'off',
-    '@typescript-eslint/indent': ['error', 2],
+    '@typescript-eslint/no-unsafe-member-access': 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-call': 'off',
+    '@typescript-eslint/no-unsafe-return': 'off',
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
-    '@typescript-eslint/naming-convention': [
-      'error',
-      {
-        format: ['camelCase', 'PascalCase', 'UPPER_CASE', 'snake_case'],
-        selector: 'variable',
-        leadingUnderscore: 'allowSingleOrDouble',
-        trailingUnderscore: 'allowSingleOrDouble',
-      },
-    ],
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': [
       'warn',
@@ -60,7 +51,33 @@ module.exports = {
         varsIgnorePattern: '^_',
       },
     ],
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': [
+      'error',
+      {
+        hoist: 'all',
+        allow: ['resolve', 'reject', 'done', 'next', 'err', 'error'],
+      },
+    ],
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        format: ['camelCase', 'PascalCase', 'UPPER_CASE', 'snake_case'],
+        selector: 'variable',
+        leadingUnderscore: 'allowSingleOrDouble',
+        trailingUnderscore: 'allowSingleOrDouble',
+      },
+    ],
+    'comma-dangle': 'off',
+    '@typescript-eslint/comma-dangle': ['error', 'only-multiline'],
+    indent: 'off',
+    '@typescript-eslint/indent': ['error', 2],
     semi: 'off',
     '@typescript-eslint/semi': ['error', 'never'],
+  },
+  settings: {
+    'import/resolver': {
+      typescript: {}, // this loads <rootdir>/tsconfig.json to eslint
+    },
   },
 }

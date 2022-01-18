@@ -4,6 +4,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     ecmaFeatures: {
+      legacyDecorators: true,
       jsx: true,
     },
     babelOptions: {
@@ -25,7 +26,10 @@ module.exports = {
     'comma-dangle': ['error', 'only-multiline'],
     'consistent-return': 'off',
     'func-names': ['error', 'as-needed'],
-    'max-len': ['error', { code: 120, tabWidth: 2, ignorePattern: 'd="([\\s\\S]*?)"', ignoreComments: true }],
+    'max-len': [
+      'error',
+      { code: 100, tabWidth: 2, ignorePattern: 'd="([\\s\\S]*?)"', ignoreComments: true },
+    ],
     'no-alert': 'off',
     'no-await-in-loop': 'off',
     'no-console': ['warn', { allow: ['warn', 'error'] }],
@@ -76,11 +80,18 @@ module.exports = {
     ],
     radix: ['error', 'as-needed'],
     semi: ['error', 'never'],
-    'space-before-function-paren': ['error', 'always'],
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'never',
+        named: 'never',
+        asyncArrow: 'always',
+      },
+    ],
     // Import Rules
     import: 'off',
-    'import/prefer-default-export': 'off',
     'import/extensions': 'off',
+    'import/prefer-default-export': 'off',
     // JSX Rules
     'jsx-a11y/accessible-emoji': 'off',
     'jsx-a11y/anchor-is-valid': [
@@ -102,6 +113,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/prefer-stateless-function': 'off',
     'react/forbid-prop-types': 'off',
+    'react/prop-types': 'off',
     'react/no-unescaped-entities': 'off',
     'react/function-component-definition': 'off',
     'react/require-default-props': 'off',
@@ -119,7 +131,7 @@ module.exports = {
       'error',
       {
         arrowParens: 'always',
-        printWidth: 120,
+        printWidth: 100,
         semi: false,
         singleQuote: true,
         tabWidth: 2,
