@@ -57,5 +57,8 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix"
+  },
+  "dependencies": {
+    "np": "^7.6.0"
   }
 }
