@@ -108,7 +108,7 @@ module.exports = {
       },
     ],
     // React Rules
-    'react/display-name': 'warn',
+    'react/display-name': 'off',
     'react/no-array-index-key': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/prefer-stateless-function': 'off',
