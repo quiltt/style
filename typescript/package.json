@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-quiltt",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Typescript styling/formatting rules for Quiltt",
   "main": "index.js",
   "license": "MIT",
