@@ -116,7 +116,10 @@ module.exports = {
     'react/forbid-prop-types': 'off',
     'react/prop-types': 'off',
     'react/no-unescaped-entities': 'off',
-    'react/function-component-definition': 'off',
+    'react/function-component-definition': [
+      2,
+      { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' },
+    ],
     'react/require-default-props': 'off',
     'react/jsx-filename-extension': [
       'warn',
