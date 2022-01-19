@@ -26,6 +26,7 @@ module.exports = {
     'comma-dangle': ['error', 'only-multiline'],
     'consistent-return': 'off',
     'func-names': ['error', 'as-needed'],
+    indent: 'off', // Let prettier handle this
     'max-len': [
       'error',
       { code: 100, tabWidth: 2, ignorePattern: 'd="([\\s\\S]*?)"', ignoreComments: true },

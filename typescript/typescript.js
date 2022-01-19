@@ -19,6 +19,7 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   // Then we add our own custom typescript rules
   rules: {
+    '@typescript-eslint/ban-ts-comment': 'off',
     // This allows us to use async function on addEventListener().
     // Discussion: https://twitter.com/wesbos/status/1337074242161172486
     '@typescript-eslint/no-explicit-any': 'off',
@@ -36,10 +37,11 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-floating-promises': 'off',
-    '@typescript-eslint/no-unsafe-member-access': 'off',
-    '@typescript-eslint/no-unsafe-assignment': 'off',
-    '@typescript-eslint/no-unsafe-call': 'off',
-    '@typescript-eslint/no-unsafe-return': 'off',
+    '@typescript-eslint/no-unsafe-argument': 'warn',
+    '@typescript-eslint/no-unsafe-assignment': 'warn',
+    '@typescript-eslint/no-unsafe-call': 'warn',
+    '@typescript-eslint/no-unsafe-member-access': 'warn',
+    '@typescript-eslint/no-unsafe-return': 'warn',
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
     'no-unused-vars': 'off',
@@ -71,7 +73,7 @@ module.exports = {
     'comma-dangle': 'off',
     '@typescript-eslint/comma-dangle': ['error', 'only-multiline'],
     indent: 'off',
-    '@typescript-eslint/indent': ['error', 2],
+    '@typescript-eslint/indent': 'off', // Let prettier handle this
     semi: 'off',
     '@typescript-eslint/semi': ['error', 'never'],
   },
