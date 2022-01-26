@@ -1,6 +1,7 @@
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
   extends: ['airbnb', 'prettier'],
-  parser: '@babel/eslint-parser',
+  parser: '@babel/eslint-parser', // Uses babel parser for JS files, overridden by typescript for TS files
   parserOptions: {
     ecmaVersion: 'latest',
     ecmaFeatures: {
@@ -35,11 +36,16 @@ module.exports = {
       },
     ],
     // Base Rules
+    /** Just a convention to keep styles consistent */
     'arrow-body-style': ['error', 'as-needed'],
+    /** Follows ES5 conventions.
+     * Adds commas to final line of object properties but not function arguments */
     'comma-dangle': ['error', 'only-multiline'],
+    /** Allowing functions to return different types based on branching */
     'consistent-return': 'off',
     'func-names': ['error', 'as-needed'],
     indent: 'off', // Let prettier handle this
+    /** Allow for comments and svg attributes to be longer than code max-len */
     'max-len': [
       'error',
       { code: 100, tabWidth: 2, ignorePattern: 'd="([\\s\\S]*?)"', ignoreComments: true },
@@ -70,6 +76,7 @@ module.exports = {
       },
     ],
     'no-underscore-dangle': 'off',
+    /** No unused vars except for certain keywords */
     'no-unused-vars': [
       'warn',
       {
@@ -78,12 +85,14 @@ module.exports = {
         varsIgnorePattern: '^_',
       },
     ],
+    /** Prefer const keyword if no reassignment. Better for scoping and perf */
     'prefer-const': [
       'error',
       {
         destructuring: 'all',
       },
     ],
+    /** Keep quotes consistent */
     quotes: [
       'error',
       'single',
@@ -92,8 +101,11 @@ module.exports = {
         allowTemplateLiterals: true,
       },
     ],
+    /** Most Int casting is set to Base 10. No need to provide Radix in these instances  */
     radix: ['error', 'as-needed'],
+    /** Consistent semicolons for entire codebase */
     semi: ['error', 'never'],
+    /** Provides more readable func names with space before parens */
     'space-before-function-paren': [
       'error',
       {
@@ -104,17 +116,21 @@ module.exports = {
     ],
     // Import Rules
     import: 'off',
+    /** No need to specify import export type if not needed */
     'import/extensions': 'off',
     'import/prefer-default-export': 'off',
     // JSX Rules
     'jsx-a11y/accessible-emoji': 'off',
+    /** All anchors need to be valid. If not possible, perhaps the component should be a button instead */
     'jsx-a11y/anchor-is-valid': [
       'warn',
       {
         aspects: ['invalidHref'],
       },
     ],
+    /** No need for hashes in anchors. Use buttons instead */
     'jsx-a11y/href-no-hash': 'off',
+    /** Form labels cannot be orphaned. Specify an input/control for it */
     'jsx-a11y/label-has-associated-control': [
       'error',
       {
@@ -129,6 +145,7 @@ module.exports = {
     'react/forbid-prop-types': 'off',
     'react/prop-types': 'off',
     'react/no-unescaped-entities': 'off',
+    /** Prefer arrow functions over function declarations */
     'react/function-component-definition': [
       2,
       { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' },

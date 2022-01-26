@@ -1,6 +1,6 @@
 # Quiltt React/JSX Style Guide
 
-These are our settings for ESLint and Prettier
+These are our settings for ESLint and Prettier. Generally, we follow AirBNB's JavaScript/TypeScript style-guide with some tweaks of our own. Some of the changes to the rules can be read within the comments for each rule either within `.eslintrc.js` or `typescript.js`. These changes are made for stricter formatting while also allowing more flexibility within certain specific TypeScript rules.
 
 ## What it does
 
