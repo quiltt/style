@@ -48,7 +48,16 @@ module.exports = {
     /** Allow for comments and svg attributes to be longer than code max-len */
     'max-len': [
       'error',
-      { code: 100, tabWidth: 2, ignorePattern: 'd="([\\s\\S]*?)"', ignoreComments: true },
+      {
+        code: 100,
+        tabWidth: 2,
+        ignorePattern:
+          /** Ignores `class=""`, `className=""`, import statements, and svg attributes */
+          '(d="([\\s\\S]*?))|(class="([\\s\\S]*?))"|(className="([\\s\\S]*?)")|(^import\\s.+\\sfrom\\s.+;$)',
+        ignoreComments: true,
+        ignoreUrls: true,
+        ignoreTemplateLiterals: true,
+      },
     ],
     'no-alert': 'off',
     'no-await-in-loop': 'off',
