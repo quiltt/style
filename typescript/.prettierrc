@@ -1,22 +1,8 @@
 {
-  "tabWidth": 2,
   "arrowParens": "always",
   "printWidth": 100,
   "semi": false,
-  "trailingComma": "es5",
   "singleQuote": true,
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx"],
-      "options": {
-        "printWidth": 100
-      }
-    },
-    {
-      "files": ["*.rb"],
-      "options": {
-        "singleQuote": false
-      }
-    }
-  ]
+  "tabWidth": 2,
+  "trailingComma": "es5"
 }
