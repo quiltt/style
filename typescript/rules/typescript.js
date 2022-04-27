@@ -1,4 +1,4 @@
-const typescriptRules = {
+module.exports = {
   /** Allow rules to be turned off/on individually within code */
   '@typescript-eslint/ban-ts-comment': 'off',
   // This allows us to use async function on addEventListener().
@@ -77,5 +77,3 @@ const typescriptRules = {
   semi: 'off',
   '@typescript-eslint/semi': ['error', 'never'],
 }
-
-export default typescriptRules

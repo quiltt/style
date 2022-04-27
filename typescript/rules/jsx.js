@@ -1,4 +1,4 @@
-const jsxRules = {
+module.exports = {
   'jsx-a11y/accessible-emoji': 'off',
   /** All anchors need to be valid. If not possible, perhaps the component should be a button instead */
   'jsx-a11y/anchor-is-valid': [
@@ -17,5 +17,3 @@ const jsxRules = {
     },
   ],
 }
-
-export default jsxRules

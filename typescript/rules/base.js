@@ -1,4 +1,4 @@
-const baseRules = {
+module.exports = {
   /** Just a convention to keep styles consistent */ 'arrow-body-style': ['error', 'as-needed'],
   /** Follows ES5 conventions.
    * Adds commas to final line of object properties but not function arguments */
@@ -86,5 +86,3 @@ const baseRules = {
     },
   ],
 }
-
-export default baseRules

@@ -1,4 +1,4 @@
-const prettierRules = {
+module.exports = {
   'prettier/prettier': [
     'error',
     {
@@ -11,5 +11,3 @@ const prettierRules = {
     },
   ],
 }
-
-export default prettierRules

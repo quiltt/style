@@ -1,4 +1,4 @@
-const reactRules = {
+module.exports = {
   'react/display-name': 'off',
   'react/no-array-index-key': 'off',
   'react/react-in-jsx-scope': 'off',
@@ -22,5 +22,3 @@ const reactRules = {
   'react-hooks/rules-of-hooks': 'error',
   'react-hooks/exhaustive-deps': 'warn',
 }
-
-export default reactRules
